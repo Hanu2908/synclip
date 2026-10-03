@@ -612,7 +612,8 @@ These apply to **every** change, by a human or an AI agent. [AGENTS.md](AGENTS.m
   - required status checks must pass
   - all review conversations must be resolved
   - linear history (squash merge only)
-- **Every change is a PR from a short-lived branch:** `feat/…`, `fix/…`, `test/…`, `refactor/…`, `chore/…`, `docs/…`, `ci/…` + a short slug (`feat/join-by-code`). Aim for one task per PR and under ~400 changed lines; split bigger work.
+- **Every change is a PR from a short-lived branch.** Features use `feature/<name>` (`feature/profile`, `feature/join-by-code`); other work uses `fix/…`, `test/…`, `refactor/…`, `chore/…`, `docs/…`, `ci/…`. Aim for one task per PR and under ~400 changed lines; split bigger work.
+- **Authorship is the owner's.** Commits and PRs carry only the owner's name: no AI co-author trailers or "generated with" lines.
 - **Conventional Commits** for commit messages and PR titles (`feat(join): approve with emoji SAS`), enforced in CI. These drive the changelog.
 - **CodeRabbit reviews every PR** (GitHub app + `.coderabbit.yaml`, profile `assertive`). Path instructions mark these as security-critical:
   - `lib/core/crypto/**`, `lib/core/security/**`

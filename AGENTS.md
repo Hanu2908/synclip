@@ -13,7 +13,7 @@ Synclip is a Flutter app (Android, desktop, web) that syncs clipboard text betwe
 
 Every change, however small, runs this loop. Each step's criterion must hold before you move on.
 
-1. **Branch** from fresh `main`: `feat|fix|test|refactor|chore|docs|ci/<slug>`. *Done when* you're on a new branch with nothing uncommitted from elsewhere.
+1. **Branch** from fresh `main`: `feature/<name>` for features (`feature/profile`), otherwise `fix|test|refactor|chore|docs|ci/<slug>`. *Done when* you're on a new branch with nothing uncommitted from elsewhere.
 2. **Scope with ponytail.** Load the `ponytail` skill and write down the smallest change that meets the PLAN.md section. Prefer the SDK or a platform feature over a new package, and justify any new dependency in the PR body. *Done when* the scope fits one PR of about 400 changed lines or fewer.
 3. **Red first.** For logic, load the `tdd` skill and write the failing test before the code: crypto, sync engine, join flow, detectors, guards, SQL policies and RPCs (pgTAP). A bug fix starts with a test that goes red on the bug. *Done when* the new test is red for the right reason.
 4. **Green, then refactor.** Implement until green. Then remove duplication at its third occurrence and not before. *Done when* `dart format`, `flutter analyze` (zero issues) and every test pass locally.
@@ -26,7 +26,8 @@ At the end of a milestone, run `ponytail-debt` and record deferred shortcuts in 
 
 ## Hard guardrails
 
-- **PR-only:** every change reaches `main` through a reviewed PR. Commit only on feature branches. Leave merging, force-pushing and branch-protection changes to the owner.
+- **PR-only:** every change reaches `main` through a reviewed PR. Commit only on feature branches. Leave merging, force-pushing `main` and branch-protection changes to the owner.
+- **Owner authorship:** commits and PR bodies carry the owner's git identity only. Write messages without `Co-Authored-By` trailers or "Generated with" lines.
 - **Secrets:** keep them in `.env` (gitignored), GitHub Environments, or Edge Function secrets. The app ships only the Supabase anon key; the service-role key lives server-side only.
 - **Clip content and keys never leave the crypto boundary in plaintext:** no logging, analytics or error reports containing them, and no plaintext columns.
 - **Schema changes** go only through `supabase/migrations/`. Each new table has RLS enabled and ships with allow + deny pgTAP tests.
