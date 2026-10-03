@@ -470,7 +470,7 @@ The room switcher lives in the top app bar title (a dropdown listing My Devices 
 | Snackbars | Sent to 2 devices · Copied · Undo (auto-send) · errors with actions |
 
 ### 7.6 Screens
-1. **Welcome:** wordmark, one line ("Your clipboard, on every device."), then **Create Quick Room** (filled), **Join with code or QR** (tonal), **Sign in for My Devices** (text).
+1. **Welcome:** the brand is the hero: a huge two-tone "Syn**clip**" wordmark at the centre (Roboto Flex at its widest, sized to the screen), the device ring above it, one line ("Your clipboard, on every device.") below, then **Create Quick Room** (filled), **Join with code or QR** (tonal), **Sign in for My Devices** (text).
 2. **Android setup** (once): add the Quick Settings tile, notification permission, auto-send toggle. Every step is skippable.
 3. **Room · Clips** (home): compact ring + ConnectionPill, then the hero clip, then history. Uses the FAB on Android/web and the watcher state on desktop.
 4. **Room · Devices:** large ring, RoomCodeDisplay + QR (Quick Room), member list with remove, pending requests, Leave room.
