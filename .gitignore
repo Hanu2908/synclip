@@ -6,6 +6,15 @@
 *.keystore
 key.properties
 
+# Flutter / Dart
+.dart_tool/
+build/
+coverage/
+*.iml
+.flutter-plugins-dependencies
+**/*.g.dart
+**/*.freezed.dart
+
 # Local tooling
 .impeccable/
 .claude/settings.local.json

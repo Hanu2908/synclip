@@ -1,0 +1,14 @@
+# Local fast checks; CI (.github/workflows/ci.yml) is the source of truth.
+# Install once: `winget install evilmartians.lefthook` (or `npm i -g lefthook`), then `lefthook install`.
+pre-commit:
+  commands:
+    format:
+      glob: "*.dart"
+      run: dart format --output=none --set-exit-if-changed {staged_files}
+    analyze:
+      glob: "*.dart"
+      run: flutter analyze --fatal-infos
+pre-push:
+  commands:
+    test:
+      run: flutter test
