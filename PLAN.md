@@ -589,7 +589,7 @@ Each milestone is a **series of small PRs** (§11), and ends with a demo plus a 
 
 | # | Milestone | Done when |
 |---|---|---|
-| **M0** | **Setup & pipeline:**<br>• Flutter SDK, Android SDK, local Supabase (Docker), staging + prod Supabase projects<br>• GitHub repo with branch protection, PR template, `.coderabbit.yaml`, Dependabot, lefthook, gitleaks, release-please<br>• `ci.yml` + `security.yml` skeletons<br>• `very_good_analysis`, folder skeleton, theme tokens | First PR (Welcome screen, light/dark) passes CI, gets a CodeRabbit review, and you merge it. App runs on Android + Windows + Chrome |
+| **M0** | **Setup & pipeline:**<br>• Flutter SDK, Android SDK, local Supabase (Docker), staging + prod Supabase projects<br>• GitHub repo with branch protection, PR template, `.coderabbit.yaml`, Dependabot, lefthook, gitleaks<br>• `ci.yml` + `security.yml` skeletons (release-please arrives with the first tagged release)<br>• `very_good_analysis`, folder skeleton, theme tokens | First PR (Welcome screen, light/dark) passes CI, gets a CodeRabbit review, and you merge it. App runs on Android + Windows + Chrome |
 | **M1** | **Plain realtime:** anonymous auth, create/join a room by code (dev-only, no approval), broadcast **plaintext** text, presence list | Two devices exchange text live; you understand Riverpod providers + streams |
 | **M2** | **Security core:**<br>• `core/crypto` + tests<br>• device keys, room key, envelope<br>• QR/link join, code + approval + emoji SAS<br>• private channels + RLS + pgTAP | M1 plaintext path deleted; server shows ciphertext only; pgTAP green |
 | **M3** | **History & limits:**<br>• `clips` table + trigger broadcast<br>• catch-up + dedupe<br>• per-mode limits, rate limits, Edge Function `join-room`<br>• pg_cron expiry | Close app → send → reopen catches up; 10 h expiry verified with a shortened interval |
@@ -612,7 +612,8 @@ These apply to **every** change, by a human or an AI agent. [AGENTS.md](AGENTS.m
   - required status checks must pass
   - all review conversations must be resolved
   - linear history (squash merge only)
-- **Every change is a PR from a short-lived branch:** `feat/…`, `fix/…`, `test/…`, `refactor/…`, `chore/…`, `docs/…`, `ci/…` + a short slug (`feat/join-by-code`). Aim for one task per PR and under ~400 changed lines; split bigger work.
+- **Every change is a PR from a short-lived branch.** Features use `feature/<name>` (`feature/profile`, `feature/join-by-code`); other work uses `fix/…`, `test/…`, `refactor/…`, `chore/…`, `docs/…`, `ci/…`. Aim for one task per PR and under ~400 changed lines; split bigger work.
+- **Authorship is the owner's.** Commits and PRs carry only the owner's name: no AI co-author trailers or "generated with" lines.
 - **Conventional Commits** for commit messages and PR titles (`feat(join): approve with emoji SAS`), enforced in CI. These drive the changelog.
 - **CodeRabbit reviews every PR** (GitHub app + `.coderabbit.yaml`, profile `assertive`). Path instructions mark these as security-critical:
   - `lib/core/crypto/**`, `lib/core/security/**`
