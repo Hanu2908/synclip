@@ -46,6 +46,32 @@ void main() {
     });
   }
 
+  testWidgets('makes the Synclip wordmark the big, centred hero', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
+    await tester.pumpWidget(_app(Brightness.light));
+
+    final wordmark = find.text('Synclip', findRichText: true);
+    expect(wordmark, findsOneWidget);
+    expect(tester.getSemantics(wordmark), isSemantics(isHeader: true));
+
+    final screen = tester.getSize(find.byType(WelcomeScreen));
+    final centre = tester.getCenter(wordmark);
+    expect(centre.dx, moreOrLessEquals(screen.width / 2, epsilon: 1));
+    expect(
+      centre.dy,
+      inInclusiveRange(screen.height * .25, screen.height * .6),
+    );
+
+    final tagline = find.text('Your clipboard, on every device.');
+    expect(
+      tester.widget<RichText>(wordmark).text.style!.fontSize,
+      greaterThan(2 * tester.widget<Text>(tagline).style!.fontSize!),
+    );
+    handle.dispose();
+  });
+
   testWidgets('survives 200% text on a small phone without overflow', (
     tester,
   ) async {

@@ -1,12 +1,16 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:synclip/app/theme/tokens.dart';
 import 'package:synclip/shared/widgets/device_ring.dart';
 
-/// First screen: the promise and the three ways in (PLAN.md §7.6.1).
+/// First screen: the brand as the hero, then the three ways in
+/// (PLAN.md §7.6.1).
 class WelcomeScreen extends StatelessWidget {
   const new({super.key});
 
   static const _illustration = DeviceRing(
+    size: 150,
     self: RingNode(
       name: 'this device',
       icon: Icons.smartphone_rounded,
@@ -53,53 +57,60 @@ class WelcomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 32,
-                          height: 32,
-                          decoration: BoxDecoration(
-                            color: scheme.primaryContainer,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Icon(
-                            Icons.content_paste_rounded,
-                            size: 18,
-                            color: scheme.onPrimaryContainer,
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Flexible(
-                          child: Text(
-                            'Synclip',
-                            overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.w800,
-                              fontVariations: const [FontVariation.width(125)],
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const ExcludeSemantics(child: _illustration),
+                          const SizedBox(height: 28),
+                          Semantics(
+                            header: true,
+                            child: Text.rich(
+                              TextSpan(
+                                children: [
+                                  const TextSpan(text: 'Syn'),
+                                  TextSpan(
+                                    text: 'clip',
+                                    style: TextStyle(color: scheme.primary),
+                                  ),
+                                ],
+                              ),
+                              // A logotype: sized by the screen, not by
+                              // the text-size setting (WCAG 1.4.4 exempt).
+                              textScaler: TextScaler.noScaling,
+                              style: theme.textTheme.displayLarge?.copyWith(
+                                fontSize: math.min(
+                                  112,
+                                  (viewport.maxWidth - 2 * Tokens.gutter) / 4.4,
+                                ),
+                                height: 1,
+                                letterSpacing: -2,
+                                fontWeight: FontWeight.w900,
+                                fontVariations: const [
+                                  FontVariation.width(Tokens.wordmarkWidth),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 32),
-                        child: Center(
-                          child: ExcludeSemantics(child: _illustration),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'Your clipboard, on every device.',
-                      style: theme.textTheme.headlineLarge,
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      'Copy on your laptop, paste on your phone. '
-                      'End-to-end encrypted: the server only ever sees '
-                      'scrambled text.',
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        color: scheme.onSurfaceVariant,
+                          const SizedBox(height: 16),
+                          Text(
+                            'Your clipboard, on every device.',
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.titleLarge?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Copy on your laptop, paste on your phone. '
+                            'End-to-end encrypted: the server only ever '
+                            'sees scrambled text.',
+                            textAlign: TextAlign.center,
+                            style: theme.textTheme.bodyLarge?.copyWith(
+                              color: scheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 28),
