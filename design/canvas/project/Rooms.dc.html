@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Device ring and room controls</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Roboto Flex',system-ui,sans-serif;color:#231A16}
+a{color:#A43D00}a:hover{color:#7A2C00}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1360px; box-sizing: border-box; padding: 64px; background: #FFF8F6; display: flex; flex-direction: column; gap: 36px; font-family: 'Roboto Flex', system-ui, sans-serif; color: #231A16;">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #56423A;">Synclip design system · 04</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1.05; font-weight: 750; font-stretch: 120%;">Device ring, room code, status, actions</h1>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 28px; background: #FFFFFF; border: 1px solid #DDC1B6;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 650;">DeviceRing · the signature</h2>
+        <span style="font-size: 13px; color: #56423A;">this device in the centre</span>
+      </div>
+      <div style="display: flex; gap: 28px; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <div style="position: relative; width: 240px; height: 240px;">
+            <div style="position: absolute; left: 24px; top: 24px; width: 188px; height: 188px; border-radius: 50%; border: 2px dashed #DDC1B6; box-sizing: border-box;"></div>
+            <svg width="240" height="240" viewBox="0 0 240 240" style="position: absolute; left: 0; top: 0;" fill="none" stroke-width="2" stroke-linecap="round"><path d="M120 120 L120 30" stroke="#2E6FC4"/><path d="M120 120 L41 165" stroke="#14826F"/><path d="M120 120 L199 165" stroke="#DDC1B6" stroke-dasharray="4 6"/></svg>
+            <div style="position: absolute; left: 88px; top: 88px; width: 64px; height: 64px; border-radius: 32px; background: #FF7A1A; color: #3A1400; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px #FFF8F6;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+            <div style="position: absolute; left: 98px; top: 8px; width: 44px; height: 44px; border-radius: 22px; background: #2E6FC4; color: #FFFFFF; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M2 20h20"/></svg></div>
+            <div style="position: absolute; left: 19px; top: 143px; width: 44px; height: 44px; border-radius: 22px; background: #14826F; color: #FFFFFF; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div style="position: absolute; left: 177px; top: 143px; width: 44px; height: 44px; border-radius: 22px; background: #FFF8F6; border: 2px solid #7E50C9; box-sizing: border-box; color: #7E50C9; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+          </div>
+          <div style="display: flex; gap: 14px; font-size: 12px; color: #56423A;">
+            <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 5px; background: #2E6FC4;"></span>MacBook · online</span>
+            <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 5px; background: #14826F;"></span>Windows PC · online</span>
+            <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; border-radius: 5px; border: 2px solid #7E50C9; box-sizing: border-box;"></span>Lab PC · offline</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 22px; padding-top: 8px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-size: 13px; font-weight: 600; color: #56423A;">Joining (pulse, 600 ms)</div>
+            <div style="position: relative; width: 120px; height: 72px;">
+              <div style="position: absolute; left: 34px; top: 4px; width: 64px; height: 64px; border-radius: 32px; border: 2px solid #C23B5266; box-sizing: border-box;"></div>
+              <div style="position: absolute; left: 44px; top: 14px; width: 44px; height: 44px; border-radius: 22px; background: #C23B52; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px #C23B5226;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-size: 13px; font-weight: 600; color: #56423A;">Compact · app bar (40 dp)</div>
+            <div style="display: flex; align-items: center;">
+              <div style="width: 28px; height: 28px; border-radius: 14px; background: #FF7A1A; border: 2px solid #FFFFFF;"></div>
+              <div style="width: 28px; height: 28px; border-radius: 14px; background: #2E6FC4; border: 2px solid #FFFFFF; margin-left: -8px;"></div>
+              <div style="width: 28px; height: 28px; border-radius: 14px; background: #14826F; border: 2px solid #FFFFFF; margin-left: -8px;"></div>
+              <div style="width: 28px; height: 28px; border-radius: 14px; background: #FFFFFF; border: 2px solid #7E50C9; margin-left: -8px; box-sizing: border-box;"></div>
+              <span style="margin-left: 10px; font-size: 13px; font-weight: 600;">3 online</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-size: 13px; font-weight: 600; color: #56423A;">Alone in the room</div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 40px; height: 40px; border-radius: 20px; background: #FF7A1A; box-shadow: 0 0 0 6px #FFDBCC;"></div>
+              <span style="font-size: 13px; color: #56423A; max-width: 160px; line-height: 1.4;">Waiting for devices… ring idles, no lines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #56423A;">Screen reader: “3 devices online: MacBook, Windows PC, this phone. Lab PC offline.”</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: 28px; background: #FCEAE3;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 650;">RoomCodeDisplay</h2>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 8px; background: #FFDDB0; color: #2B1A00; font-size: 13px; font-weight: 600;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Expires in 52 min</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 600; letter-spacing: 0.12em;">K7P·Q2X</div>
+          <div style="width: 96px; height: 96px; border-radius: 12px; background: #FFFFFF; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px; padding: 8px; box-sizing: border-box;">
+            <sc-for list="{{qr}}" as="c" hint-placeholder-count="49"><div style="background: {{c}}; border-radius: 1px;"></div></sc-for>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button style="height: 40px; padding: 0 16px; border-radius: 20px; border: none; background: #A43D00; color: #FFFFFF; font-size: 14px; font-weight: 550; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>Share link</button>
+          <button style="height: 40px; padding: 0 16px; border-radius: 20px; border: 1px solid #8A7269; background: transparent; color: #A43D00; font-size: 14px; font-weight: 550; display: flex; align-items: center; gap: 8px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>Copy code</button>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.45; color: #56423A;">QR and link carry the key and join instantly. Typing the code asks a device here to approve.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 650;">ConnectionPill</h2>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 16px; background: #FFDBCC; color: #3A1400; font-size: 13px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #A43D00; box-shadow: 0 0 0 3px #FF7A1A55;"></span>Live</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 16px; background: #F1DFD8; color: #56423A; font-size: 13px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 4px; border: 2px solid #8A7269; border-top-color: transparent; box-sizing: border-box;"></span>Connecting</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 16px; background: #FFDDB0; color: #2B1A00; font-size: 13px; font-weight: 600;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Reconnecting</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 16px; background: transparent; border: 1px solid #8A7269; color: #56423A; font-size: 13px; font-weight: 600;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M12 20h.01"/></svg>Offline · synced 2 m ago</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 16px; background: #F1DFD8; color: #56423A; font-size: 13px; font-weight: 600;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>Paused (desktop)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">SendFab</h2>
+      <div style="display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap;">
+        <div style="display: flex; flex-direction: column; gap: 6px; align-items: center;">
+          <button style="height: 56px; padding: 0 20px 0 16px; border-radius: 16px; border: none; background: #FF7A1A; color: #3A1400; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px; box-shadow: 0 3px 8px #5A2A0033;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 17v-6M9 14l3-3 3 3"/></svg>Send clipboard</button>
+          <span style="font-size: 12px; color: #56423A;">idle</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; align-items: center;">
+          <button aria-label="Sending" style="width: 56px; height: 56px; border-radius: 16px; border: none; background: #FF7A1A; color: #3A1400; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px #5A2A0033;"><span style="width: 22px; height: 22px; border-radius: 11px; border: 3px solid #3A1400; border-right-color: transparent; box-sizing: border-box;"></span></button>
+          <span style="font-size: 12px; color: #56423A;">sending</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; align-items: center;">
+          <button aria-label="Sent" style="width: 56px; height: 56px; border-radius: 16px; border: none; background: #D5EED3; color: #0B3A10; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px #0B3A1022;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></button>
+          <span style="font-size: 12px; color: #56423A;">sent · 600 ms</span>
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 13px; color: #56423A; line-height: 1.45;">Collapses to icon-only on scroll. Nothing new on the clipboard → snackbar, no error.</p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Buttons</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+        <button style="height: 40px; border-radius: 20px; border: none; background: #A43D00; color: #FFFFFF; font-size: 14px; font-weight: 550;">Filled · Allow</button>
+        <button style="height: 40px; border-radius: 20px; border: none; background: #A43D00; color: #FFFFFF; font-size: 14px; font-weight: 550; box-shadow: inset 0 0 0 40px #FFFFFF1F;">Filled · pressed</button>
+        <button style="height: 40px; border-radius: 20px; border: none; background: #FFDBCC; color: #2C160C; font-size: 14px; font-weight: 550;">Tonal · Join</button>
+        <button disabled style="height: 40px; border-radius: 20px; border: none; background: #231A161F; color: #231A1661; font-size: 14px; font-weight: 550; cursor: default;">Disabled</button>
+        <button style="height: 40px; border-radius: 20px; border: 1px solid #8A7269; background: transparent; color: #A43D00; font-size: 14px; font-weight: 550;">Outlined · Deny</button>
+        <button style="height: 40px; border-radius: 20px; border: none; background: transparent; color: #A43D00; font-size: 14px; font-weight: 550;">Text · Not now</button>
+        <button style="height: 40px; border-radius: 20px; border: none; background: #A43D00; color: #FFFFFF; font-size: 14px; font-weight: 550; outline: 3px solid #231A16; outline-offset: 2px;">Focus ring</button>
+        <button style="height: 40px; border-radius: 20px; border: none; background: #BA1A1A; color: #FFFFFF; font-size: 14px; font-weight: 550;">Destructive · Remove</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Top app bar · room switcher</h2>
+      <div style="display: flex; flex-direction: column; border-radius: 20px; background: #FFF8F6; border: 1px solid #DDC1B6; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 8px; height: 64px; padding: 0 8px 0 16px;">
+          <button style="display: flex; align-items: center; gap: 6px; height: 48px; padding: 0 8px; border: none; background: transparent; font-size: 20px; font-weight: 700; font-stretch: 120%; color: #231A16;">My Devices<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <span style="flex-grow: 1;"></span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border-radius: 14px; background: #FFDBCC; color: #3A1400; font-size: 12px; font-weight: 600;"><span style="width: 7px; height: 7px; border-radius: 4px; background: #A43D00;"></span>Live</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 8px 0; background: #FCEAE3; border-top: 1px solid #DDC1B6;">
+          <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 16px; background: #FFDBCC;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span style="flex-grow: 1; font-size: 15px; font-weight: 600;">My Devices</span><span style="font-size: 12px; color: #56423A;">4 devices</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 16px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span style="flex-grow: 1; font-size: 15px;">Quick · <span style="font-family: 'JetBrains Mono', monospace;">K7P·Q2X</span></span><span style="font-size: 12px; color: #8A5A00;">52 min</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 16px; color: #A43D00;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><span style="font-size: 15px; font-weight: 600;">Join or create a room</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Navigation · bar on phones, rail from 600 dp</h2>
+    <div style="display: flex; gap: 32px; align-items: flex-start;">
+      <div style="width: 390px; height: 80px; background: #FCEAE3; border-radius: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="width: 64px; height: 32px; border-radius: 16px; background: #FFDBCC; color: #3A1400; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></span><span style="font-size: 12px; font-weight: 700;">Clips</span></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #56423A;"><span style="width: 64px; height: 32px; display: flex; align-items: center; justify-content: center; position: relative;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M7 19h5"/><rect x="16" y="11" width="6" height="11" rx="2"/></svg><span style="position: absolute; right: 12px; top: 0; min-width: 16px; height: 16px; border-radius: 8px; background: #BA1A1A; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">1</span></span><span style="font-size: 12px; font-weight: 550;">Devices</span></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #56423A;"><span style="width: 64px; height: 32px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><span style="font-size: 12px; font-weight: 550;">Settings</span></div>
+      </div>
+      <p style="margin: 0; max-width: 520px; font-size: 14px; line-height: 1.5; color: #56423A;">The badge on Devices counts pending join requests. On desktop and tablets the same three destinations move to a NavigationRail on the left.</p>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1360}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const p = '1111111100000110111011011101101110110000011111111';
+    const noise = '0101101101001011010010110110100101101001011010011';
+    const qr = p.split('').map((v, i) => {
+      const r = Math.floor(i / 7), c = i % 7;
+      const finder = (r < 3 && c < 3) || (r < 3 && c > 3) || (r > 3 && c < 3);
+      const on = finder ? (r % 6 === 0 || c % 6 === 0 || (r % 6 !== 1 && c % 6 !== 1 && r !== 5 && c !== 5)) : noise[i] === '1';
+      return on ? '#231A16' : '#FFFFFF';
+    });
+    return { qr };
+  }
+}
+</script>
+</body>
+</html>

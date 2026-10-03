@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signature motion</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1100px; box-sizing: border-box; padding: 56px 64px; background: #FFF8F6; color: #231A16; font-family: 'Roboto Flex', system-ui, sans-serif; display: flex; gap: 40px;">
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #56423A;">Synclip design system · 06</div>
+      <h1 style="margin: 0; font-size: 48px; line-height: 1.05; font-weight: 750; font-stretch: 120%;">Signature motion, frame by frame</h1>
+    </div>
+    <sc-for list="{{boards}}" as="b" hint-placeholder-count="4">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: baseline; gap: 12px;">
+          <span style="font-size: 17px; font-weight: 650;">{{b.title}}</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #56423A;">{{b.spec}}</span>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <sc-for list="{{b.frames}}" as="f" hint-placeholder-count="4">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <div style="position: relative; width: 218px; height: 140px; border-radius: 14px; background: #FFFFFF; border: 1px solid #DDC1B6; overflow: hidden;">
+                <div style="position: absolute; left: 14px; top: 20px; width: 72px; height: 72px; border-radius: 50%; border: 2px dashed #DDC1B6; box-sizing: border-box;"></div>
+                <div style="position: absolute; left: 38px; top: 44px; width: 24px; height: 24px; border-radius: 12px; background: #FF7A1A; box-shadow: {{f.glowC}};"></div>
+                <div style="position: absolute; left: 40px; top: 10px; width: 20px; height: 20px; border-radius: 10px; background: #2E6FC4; box-shadow: {{f.glowA}};"></div>
+                <div style="position: absolute; left: 6px; top: 70px; width: 20px; height: 20px; border-radius: 10px; background: #14826F; box-shadow: {{f.glowB}};"></div>
+                <div style="position: absolute; left: {{f.ripL}}; top: {{f.ripT}}; width: {{f.ripS}}; height: {{f.ripS}}; border-radius: 50%; border: 2px solid #C23B52; box-sizing: border-box; opacity: {{f.ripOp}};"></div>
+                <div style="position: absolute; left: {{f.joinL}}; top: {{f.joinT}}; width: {{f.joinS}}; height: {{f.joinS}}; border-radius: 50%; background: #C23B52; opacity: {{f.joinOp}};"></div>
+                <div style="position: absolute; left: 104px; top: {{f.listTop}}; width: 102px; display: flex; flex-direction: column; gap: 6px;">
+                  <div style="height: 16px; border-radius: 6px; background: #F6E5DE;"></div>
+                  <div style="height: 16px; border-radius: 6px; background: #F6E5DE;"></div>
+                  <div style="height: 16px; border-radius: 6px; background: #F6E5DE;"></div>
+                </div>
+                <div style="position: absolute; left: 104px; top: 12px; width: 102px; height: {{f.cardH}}; border-radius: 10px; background: #FFFFFF; box-shadow: 0 0 0 2px #FF7A1A; opacity: {{f.cardOp}};"></div>
+                <div style="position: absolute; left: {{f.dotX}}; top: {{f.dotY}}; width: {{f.dotS}}; height: {{f.dotS}}; border-radius: 50%; background: #2E6FC4; opacity: {{f.dotOp}};"></div>
+                <div style="position: absolute; inset: 0; background: #231A16; opacity: {{f.scrim}};"></div>
+                <div style="position: absolute; left: 0; right: 0; top: {{f.sheetTop}}; height: 110px; border-radius: 16px 16px 0 0; background: #FCEAE3; display: flex; flex-direction: column; align-items: center; gap: 10px; padding-top: 8px; box-sizing: border-box;">
+                  <div style="width: 24px; height: 3px; border-radius: 2px; background: #8A7269;"></div>
+                  <div style="display: flex; gap: 8px;">
+                    <sc-for list="{{f.emos}}" as="e" hint-placeholder-count="5"><div style="width: 20px; height: 20px; border-radius: 6px; background: #FFB693; opacity: {{e.op}};"></div></sc-for>
+                  </div>
+                  <div style="display: flex; gap: 8px;"><div style="width: 70px; height: 18px; border-radius: 9px; border: 1px solid #8A7269; box-sizing: border-box;"></div><div style="width: 70px; height: 18px; border-radius: 9px; background: #A43D00;"></div></div>
+                </div>
+              </div>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #56423A;">{{f.t}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="width: 340px; flex-shrink: 0; display: flex; flex-direction: column; gap: 22px; padding-top: 112px;">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 24px; background: #FCEAE3;">
+      <div style="font-size: 17px; font-weight: 650;">Everything else: M3 standard</div>
+      <div style="display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; font-size: 14px;">
+        <span>Press, ripple, toggle</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">100–150 ms</span>
+        <span>Chip, pill, icon morph</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">200 ms</span>
+        <span>Tab / page (shared axis)</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">300 ms</span>
+        <span>Sheet, dialog enter</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">400 ms</span>
+        <span>Exit (always faster)</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">≈ 0.7 × enter</span>
+      </div>
+      <div style="font-size: 13px; color: #56423A; line-height: 1.45;">Easing: emphasized decelerate in, emphasized accelerate out. No bounce by reflex; the sheet spring is damped (ratio ≈ 0.85).</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 24px; background: #FFFFFF; border: 1px solid #DDC1B6;">
+      <div style="font-size: 17px; font-weight: 650;">Remove animations = on</div>
+      <div style="font-size: 14px; line-height: 1.5; color: #56423A;">Arrive and send become a 150 ms crossfade plus the accent ring. A joining node appears with a static “new” badge. Code-input errors change color, no shake. Haptics stay.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 24px; background: #FFFFFF; border: 1px solid #DDC1B6;">
+      <div style="font-size: 17px; font-weight: 650;">Haptics</div>
+      <div style="display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; font-size: 14px;">
+        <span>Clip sent / received</span><span style="font-size: 13px; color: #56423A;">light impact</span>
+        <span>Copied</span><span style="font-size: 13px; color: #56423A;">selection click</span>
+        <span>Allow a device</span><span style="font-size: 13px; color: #56423A;">medium impact</span>
+        <span>Error</span><span style="font-size: 13px; color: #56423A;">none (visual only)</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const px = (n) => n + 'px';
+    const glow = '0 0 0 6px #FF7A1A55';
+    const emos = (n) => [0, 1, 2, 3, 4].map((i) => ({ op: i < n ? 1 : 0 }));
+    const base = {
+      glowA: 'none', glowB: 'none', glowC: 'none',
+      ripL: px(70), ripT: px(64), ripS: px(0), ripOp: 0,
+      joinL: px(76), joinT: px(70), joinS: px(0), joinOp: 0,
+      listTop: px(44), cardH: px(26), cardOp: 0,
+      dotX: px(0), dotY: px(0), dotS: px(0), dotOp: 0,
+      scrim: 0, sheetTop: px(160), emos: emos(0)
+    };
+    const f = (t, o) => Object.assign({}, base, { t }, o);
+    return {
+      boards: [
+        {
+          title: 'Clip arrives', spec: '450 ms · emphasized decelerate · light haptic',
+          frames: [
+            f('0 ms · sender glows', { glowA: glow, dotX: px(45), dotY: px(15), dotS: px(10), dotOp: 1 }),
+            f('150 ms · dot leaves on an arc', { dotX: px(78), dotY: px(4), dotS: px(10), dotOp: 1 }),
+            f('300 ms · list makes room', { dotX: px(140), dotY: px(16), dotS: px(14), dotOp: 1, listTop: px(70), cardOp: 0.4, cardH: px(14) }),
+            f('450 ms · dot becomes the hero card', { listTop: px(74), cardOp: 1, cardH: px(52) })
+          ]
+        },
+        {
+          title: 'Clip sent', spec: '350 ms · emphasized accelerate · light haptic',
+          frames: [
+            f('0 ms · tap Send', { listTop: px(74), cardOp: 1, cardH: px(52) }),
+            f('120 ms · card folds to a dot', { listTop: px(60), cardOp: 0.35, cardH: px(18), dotX: px(150), dotY: px(16), dotS: px(14), dotOp: 1 }),
+            f('240 ms · dot flies to you', { listTop: px(48), dotX: px(44), dotY: px(50), dotS: px(12), dotOp: 1 }),
+            f('350 ms · other nodes blink once', { glowA: glow, glowB: glow, glowC: '0 0 0 4px #FF7A1A33' })
+          ]
+        },
+        {
+          title: 'Device joins the ring', spec: '600 ms · ripple once',
+          frames: [
+            f('0 ms · approved', {}),
+            f('150 ms · node grows in', { joinL: px(80), joinT: px(74), joinS: px(10), joinOp: 0.5 }),
+            f('350 ms · ripple expands', { joinL: px(75), joinT: px(69), joinS: px(20), joinOp: 1, ripL: px(70), ripT: px(64), ripS: px(30), ripOp: 0.8 }),
+            f('600 ms · settled', { joinL: px(75), joinT: px(69), joinS: px(20), joinOp: 1, ripL: px(62), ripT: px(56), ripS: px(46), ripOp: 0.15 })
+          ]
+        },
+        {
+          title: 'Approval sheet', spec: '400 ms spring + 40 ms emoji stagger · medium haptic on Allow',
+          frames: [
+            f('0 ms · request arrives', { listTop: px(74), cardOp: 1, cardH: px(52) }),
+            f('150 ms · sheet rises, scrim', { listTop: px(74), cardOp: 1, cardH: px(52), scrim: 0.18, sheetTop: px(70) }),
+            f('300 ms · emojis stagger in', { listTop: px(74), cardOp: 1, cardH: px(52), scrim: 0.3, sheetTop: px(30), emos: emos(3) }),
+            f('400 ms · settled, Allow ready', { listTop: px(74), cardOp: 1, cardH: px(52), scrim: 0.3, sheetTop: px(34), emos: emos(5) })
+          ]
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

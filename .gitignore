@@ -1,0 +1,15 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+key.properties
+
+# Local tooling
+.impeccable/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

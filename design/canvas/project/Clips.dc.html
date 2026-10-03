@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clip cards</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Roboto Flex',system-ui,sans-serif;color:#231A16}
+a{color:#A43D00}a:hover{color:#7A2C00}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1360px; box-sizing: border-box; padding: 64px; background: #FFF8F6; display: flex; flex-direction: column; gap: 36px; font-family: 'Roboto Flex', system-ui, sans-serif; color: #231A16;">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #56423A;">Synclip design system · 03</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1.05; font-weight: 750; font-stretch: 120%;">Clip cards &amp; link previews</h1>
+    </div>
+    <p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 1.5; color: #56423A;">The newest clip is the hero: bigger type, a white surface and a 4 dp source edge in the sender's device color. Older clips are compact. Copy is always one 48 dp tap.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Hero · text · just arrived</div>
+      <div style="display: flex; border-radius: 20px; background: #FFFFFF; overflow: hidden; box-shadow: 0 0 0 2px #FF7A1A;">
+        <div style="width: 4px; background: #2E6FC4; flex-shrink: 0;"></div>
+        <div style="flex-grow: 1; padding: 18px 8px 10px 18px; display: flex; flex-direction: column; gap: 12px;">
+          <div style="font-size: 18px; font-weight: 600; line-height: 1.4;">Meeting moved to 5 pm, room 204. Bring the printed draft.</div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 8px; background: #E3ECFA; color: #123A73; font-size: 12px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #2E6FC4;"></span>MacBook</span>
+            <span style="font-size: 12px; color: #56423A; flex-grow: 1;">just now · copied here</span>
+            <button aria-label="Copy" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: #FFDBCC; color: #3A1400; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div style="font-size: 12px; color: #56423A;">Accent ring fades out over 2 s after arrival.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Hero · URL · preview loaded</div>
+      <div style="display: flex; border-radius: 20px; background: #FFFFFF; overflow: hidden; border: 1px solid #DDC1B6;">
+        <div style="width: 4px; background: #14826F; flex-shrink: 0;"></div>
+        <div style="flex-grow: 1; padding: 14px 8px 10px 14px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; gap: 12px; padding: 10px; border-radius: 14px; background: #FFF1EC;">
+            <div style="width: 72px; height: 72px; border-radius: 10px; background: #F1DFD8; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #56423A; text-align: center;">og:image</div>
+            <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+              <div style="font-size: 12px; color: #56423A;">github.com</div>
+              <div style="font-size: 15px; font-weight: 600; line-height: 1.3;">supabase/supabase-flutter: Flutter client for Supabase</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 8px; background: #DDF1EC; color: #0B3D33; font-size: 12px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #14826F;"></span>Pixel 7</span>
+            <span style="font-size: 12px; color: #56423A; flex-grow: 1;">2 min ago</span>
+            <button aria-label="Open link" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: transparent; color: #56423A; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></button>
+            <button aria-label="Copy" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: #FFDBCC; color: #3A1400; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div style="font-size: 12px; color: #56423A;">Links never auto-open. Open is a separate button.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Compact · text / code</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 16px; border-radius: 20px; background: #F6E5DE;">
+          <span style="width: 8px; height: 8px; border-radius: 4px; background: #7E50C9; flex-shrink: 0;"></span>
+          <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; line-height: 1.35; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Order #4471 ships Thursday via BlueDart</div>
+            <div style="font-size: 11px; font-weight: 550; letter-spacing: 0.04em; color: #56423A;">WINDOWS PC · 14 MIN</div>
+          </div>
+          <button aria-label="Copy" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: transparent; color: #56423A; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 16px; border-radius: 20px; background: #F6E5DE;">
+          <span style="width: 8px; height: 8px; border-radius: 4px; background: #2E6FC4; flex-shrink: 0;"></span>
+          <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">flutter pub add supabase_flutter</div>
+            <div style="font-size: 11px; font-weight: 550; letter-spacing: 0.04em; color: #56423A;">MACBOOK · 1 H · CODE</div>
+          </div>
+          <button aria-label="Copy" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: transparent; color: #56423A; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+      </div>
+      <div style="font-size: 12px; color: #56423A;">Tap the card to expand; long-press for Delete and Share.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Sending</div>
+      <div style="display: flex; flex-direction: column; border-radius: 20px; background: #F6E5DE; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 16px; opacity: 0.6;">
+          <span style="width: 8px; height: 8px; border-radius: 4px; background: #A43D00; flex-shrink: 0;"></span>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px;">https://pub.dev/packages/cryptography</div>
+            <div style="font-size: 11px; font-weight: 550; letter-spacing: 0.04em; color: #56423A;">THIS PHONE · SENDING…</div>
+          </div>
+          <div style="width: 48px; height: 48px;"></div>
+        </div>
+        <div style="height: 4px; background: #FFDBCC;"><div style="width: 62%; height: 4px; background: #A43D00;"></div></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Failed</div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 16px; border-radius: 20px; background: #FFDAD6; color: #410002;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 15px;">https://pub.dev/packages/cryptography</div>
+          <div style="font-size: 12px;">Not sent. You're offline.</div>
+        </div>
+        <button style="height: 40px; padding: 0 16px; border-radius: 20px; border: 1px solid #BA1A1A; background: transparent; color: #BA1A1A; font-size: 14px; font-weight: 550; display: flex; align-items: center; gap: 6px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Retry</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Copied (1.5 s, then back to Copy)</div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 6px 4px 6px 16px; border-radius: 20px; background: #F6E5DE;">
+        <span style="width: 8px; height: 8px; border-radius: 4px; background: #7E50C9; flex-shrink: 0;"></span>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 15px;">Order #4471 ships Thursday via BlueDart</div>
+          <div style="font-size: 11px; font-weight: 550; letter-spacing: 0.04em; color: #2E7D32;">COPIED</div>
+        </div>
+        <button aria-label="Copied" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: #D5EED3; color: #0B3A10; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Sensitive · live only, never stored</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 6px 8px 16px; border-radius: 20px; background: #D8E2FF; color: #001A43;">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Sensitive · not saved to history</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="flex-grow: 1; font-family: 'JetBrains Mono', monospace; font-size: 16px; letter-spacing: 0.08em;">•••• •••• •••• 4242</div>
+          <button style="height: 40px; padding: 0 14px; border-radius: 20px; border: none; background: transparent; color: #2E5FB0; font-size: 14px; font-weight: 550;">Reveal</button>
+          <button aria-label="Copy" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: #B3C7F5; color: #001A43; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Hero · long text (clamped to 6 lines)</div>
+      <div style="display: flex; border-radius: 20px; background: #FFFFFF; overflow: hidden; border: 1px solid #DDC1B6;">
+        <div style="width: 4px; background: #9A6A00; flex-shrink: 0;"></div>
+        <div style="flex-grow: 1; padding: 18px 8px 10px 18px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="font-size: 16px; line-height: 1.5;">Dear team, quick summary of today's review: the sync engine handles reconnects cleanly, the approval flow needs one more pass on copy, and we still owe the threat model a section on web key storage. Please read the PR before Friday so we can merge it before the demo…</div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 8px; background: #F7E9C8; color: #3A2800; font-size: 12px; font-weight: 600;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #9A6A00;"></span>Lab PC (web)</span>
+            <button style="height: 40px; padding: 0 12px; border-radius: 20px; border: none; background: transparent; color: #A43D00; font-size: 14px; font-weight: 550;">Show all</button>
+            <span style="flex-grow: 1;"></span>
+            <button aria-label="Copy" style="width: 48px; height: 48px; border-radius: 24px; border: none; background: #FFDBCC; color: #3A1400; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">Skeleton · catching up on open</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="height: 96px; border-radius: 20px; background: #F6E5DE; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px;">
+          <div style="width: 86%; height: 14px; border-radius: 7px; background: #EAD6CE;"></div>
+          <div style="width: 60%; height: 14px; border-radius: 7px; background: #EAD6CE;"></div>
+          <div style="width: 28%; height: 10px; border-radius: 5px; background: #EAD6CE;"></div>
+        </div>
+        <div style="height: 60px; border-radius: 20px; background: #F6E5DE; padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px;">
+          <div style="width: 70%; height: 12px; border-radius: 6px; background: #EAD6CE;"></div>
+          <div style="width: 24%; height: 8px; border-radius: 4px; background: #EAD6CE;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Link preview · states</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Loading</div>
+        <div style="display: flex; gap: 12px; padding: 10px; border-radius: 14px; background: #FFF1EC;">
+          <div style="width: 56px; height: 56px; border-radius: 10px; background: #F1DFD8;"></div>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 8px; padding-top: 6px;"><div style="width: 40%; height: 10px; border-radius: 5px; background: #F1DFD8;"></div><div style="width: 90%; height: 12px; border-radius: 6px; background: #F1DFD8;"></div></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Loaded · no image</div>
+        <div style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: 14px; background: #FFF1EC;">
+          <div style="font-size: 12px; color: #56423A;">docs.flutter.dev</div>
+          <div style="font-size: 15px; font-weight: 600; line-height: 1.3;">Adaptive and responsive design in Flutter</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Failed → plain link</div>
+        <div style="padding: 12px 14px; border-radius: 14px; background: #FFF1EC; font-size: 15px; line-height: 1.4;"><span style="font-weight: 600;">example.org</span><span style="color: #56423A;">/a/very/long/path?ref=clip</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Previews off · web</div>
+        <div style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border-radius: 14px; border: 1px dashed #DDC1B6;">
+          <div style="font-size: 15px; line-height: 1.4;"><span style="font-weight: 600;">github.com</span><span style="color: #56423A;">/supabase/supabase-flutter</span></div>
+          <div style="font-size: 12px; color: #56423A;">Domain highlighted so a look-alike link stands out.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1360}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

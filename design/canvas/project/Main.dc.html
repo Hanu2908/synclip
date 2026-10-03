@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Synclip color</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Roboto Flex',system-ui,sans-serif;color:#231A16}
+a{color:#A43D00}a:hover{color:#7A2C00}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1240px; box-sizing: border-box; padding: 64px; background: #FFF8F6; display: flex; flex-direction: column; gap: 40px; font-family: 'Roboto Flex', system-ui, sans-serif; color: #231A16;">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #56423A;">Synclip design system · 01</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1.05; font-weight: 750; font-stretch: 120%;">Color</h1>
+      <p style="margin: 0; max-width: 640px; font-size: 18px; line-height: 1.5; color: #56423A;">Restrained: tonal neutrals plus one accent. Tangerine marks only the primary action, the live state, the selected room and the newest clip. Components read Material 3 roles, never raw hex.</p>
+    </div>
+    <div style="display: flex; gap: 0; border-radius: 28px; overflow: hidden; width: 420px; height: 168px; flex-shrink: 0;">
+      <div style="flex: 1; background: #FF7A1A; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; color: #3A1400;">
+        <div style="font-size: 14px; font-weight: 600; letter-spacing: 0.04em;">BRAND SEED</div>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <div style="font-size: 28px; font-weight: 750; font-stretch: 120%;">Synclip Tangerine</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 15px;">#FF7A1A · fidelity variant</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 28px; background: #FFFFFF; border: 1px solid #DDC1B6;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Light scheme</h2>
+        <span style="font-size: 13px; color: #56423A;">role · on-role sample</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+        <sc-for list="{{light}}" as="r" hint-placeholder-count="16">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="height: 64px; border-radius: 14px; background: {{r.bg}}; color: {{r.fg}}; border: 1px solid #00000014; display: flex; align-items: flex-end; padding: 8px 10px; box-sizing: border-box; font-size: 13px; font-weight: 600;">Aa</div>
+            <div style="font-size: 12px; font-weight: 600; line-height: 1.2;">{{r.name}}</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #56423A;">{{r.bg}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 28px; background: #1A120E; color: #F1DFD8;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Dark scheme</h2>
+        <span style="font-size: 13px; color: #DDC1B6;">first-class, never an invert</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+        <sc-for list="{{dark}}" as="r" hint-placeholder-count="16">
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div style="height: 64px; border-radius: 14px; background: {{r.bg}}; color: {{r.fg}}; border: 1px solid #FFFFFF1F; display: flex; align-items: flex-end; padding: 8px 10px; box-sizing: border-box; font-size: 13px; font-weight: 600;">Aa</div>
+            <div style="font-size: 12px; font-weight: 600; line-height: 1.2;">{{r.name}}</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #DDC1B6;">{{r.bg}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Accent picker presets</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #56423A;">Each is a seed; the whole scheme regenerates. Wallpaper uses Dynamic Color on Android 12+ and falls back to Tangerine elsewhere.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <sc-for list="{{accents}}" as="a" hint-placeholder-count="7">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; width: 64px;">
+            <div style="width: 48px; height: 48px; border-radius: 24px; background: {{a.hex}}; box-shadow: {{a.ring}};"></div>
+            <div style="font-size: 12px; font-weight: 600;">{{a.name}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Device colors</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #56423A;">Picked from the device id, harmonized to the accent. Used only on ring nodes and clip-card source chips.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+        <sc-for list="{{devices}}" as="d" hint-placeholder-count="8">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 28px; height: 28px; border-radius: 14px; background: {{d.hex}};"></div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #56423A;">{{d.hex}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Semantic</h2>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <sc-for list="{{semantic}}" as="s" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 12px; background: {{s.container}}; color: {{s.on}};">
+            <div style="width: 12px; height: 12px; border-radius: 6px; background: {{s.color}};"></div>
+            <span style="font-size: 14px; font-weight: 600; flex-grow: 1;">{{s.name}}</span>
+            <span style="font-size: 13px;">{{s.use}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const role = (name, bg, fg) => ({ name, bg, fg });
+    return {
+      light: [
+        role('primary', '#A43D00', '#FFFFFF'), role('onPrimary', '#FFFFFF', '#A43D00'),
+        role('primaryContainer', '#FF7A1A', '#3A1400'), role('onPrimaryContainer', '#3A1400', '#FFDBCC'),
+        role('secondary', '#77574A', '#FFFFFF'), role('secondaryContainer', '#FFDBCC', '#2C160C'),
+        role('tertiary', '#636100', '#FFFFFF'), role('tertiaryContainer', '#EAE67F', '#1D1D00'),
+        role('surface', '#FFF8F6', '#231A16'), role('surfaceContainerLow', '#FFF1EC', '#231A16'),
+        role('surfaceContainer', '#FCEAE3', '#231A16'), role('surfaceContainerHigh', '#F6E5DE', '#231A16'),
+        role('onSurface', '#231A16', '#FFF8F6'), role('onSurfaceVariant', '#56423A', '#FFF8F6'),
+        role('outline', '#8A7269', '#FFFFFF'), role('outlineVariant', '#DDC1B6', '#231A16')
+      ],
+      dark: [
+        role('primary', '#FFB693', '#561F00'), role('onPrimary', '#561F00', '#FFB693'),
+        role('primaryContainer', '#FF7A1A', '#2E0E00'), role('onPrimaryContainer', '#2E0E00', '#FFDBCC'),
+        role('secondary', '#E7BEAD', '#442A1F'), role('secondaryContainer', '#5D4033', '#FFDBCC'),
+        role('tertiary', '#CDCA66', '#323200'), role('tertiaryContainer', '#4A4800', '#EAE67F'),
+        role('surface', '#1A120E', '#F1DFD8'), role('surfaceContainerLow', '#231A16', '#F1DFD8'),
+        role('surfaceContainer', '#271E1A', '#F1DFD8'), role('surfaceContainerHigh', '#322824', '#F1DFD8'),
+        role('onSurface', '#F1DFD8', '#1A120E'), role('onSurfaceVariant', '#DDC1B6', '#1A120E'),
+        role('outline', '#A58B81', '#1A120E'), role('outlineVariant', '#56423A', '#F1DFD8')
+      ],
+      accents: [
+        { name: 'Tangerine', hex: '#FF7A1A', ring: '0 0 0 3px #FFF8F6, 0 0 0 5px #A43D00' },
+        { name: 'Cobalt', hex: '#2F5BEA', ring: 'none' },
+        { name: 'Jade', hex: '#12A07A', ring: 'none' },
+        { name: 'Grape', hex: '#8A4FD8', ring: 'none' },
+        { name: 'Rose', hex: '#E0447C', ring: 'none' },
+        { name: 'Graphite', hex: '#5F6B7A', ring: 'none' },
+        { name: 'Wallpaper', hex: 'conic-gradient(#FF7A1A, #12A07A, #2F5BEA, #8A4FD8, #FF7A1A)', ring: 'none' }
+      ],
+      devices: ['#C23B52', '#2E6FC4', '#14826F', '#7E50C9', '#9A6A00', '#4E7F22', '#B8448C', '#46679C'].map((hex) => ({ hex })),
+      semantic: [
+        { name: 'Live', use: 'connected, primary', color: '#A43D00', container: '#FFDBCC', on: '#3A1400' },
+        { name: 'Success', use: 'sent, approved', color: '#2E7D32', container: '#D5EED3', on: '#0B3A10' },
+        { name: 'Warning', use: 'expires soon', color: '#8A5A00', container: '#FFDDB0', on: '#2B1A00' },
+        { name: 'Error', use: 'failed, denied', color: '#BA1A1A', container: '#FFDAD6', on: '#410002' },
+        { name: 'Info', use: 'sensitive, tips', color: '#2E5FB0', container: '#D8E2FF', on: '#001A43' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

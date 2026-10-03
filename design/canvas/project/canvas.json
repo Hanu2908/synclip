@@ -1,0 +1,37 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-03T12:00:00Z"},
+  "title": "Synclip Design System",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 1240, "title": "01 · Color"},
+    "Type.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 1240, "title": "02 · Type, shape, spacing, icons"},
+    "Clips.dc.html": {"x": 0, "y": 1600, "w": 1440, "h": 1360, "title": "03 · Clip cards & link previews"},
+    "Rooms.dc.html": {"x": 1520, "y": 1600, "w": 1440, "h": 1360, "title": "04 · Device ring, room code, status, actions"},
+    "Join.dc.html": {"x": 3040, "y": 1600, "w": 1440, "h": 1360, "title": "05 · Join, approval, prompts, feedback"},
+    "ScreenWelcome.dc.html": {"x": 0, "y": 3320, "w": 390, "h": 844, "title": "Welcome"},
+    "ScreenHome.dc.html": {"x": 470, "y": 3320, "w": 390, "h": 844, "title": "Clips · light"},
+    "ScreenHomeDark.dc.html": {"x": 940, "y": 3320, "w": 390, "h": 844, "title": "Clips · dark"},
+    "ScreenDevices.dc.html": {"x": 1410, "y": 3320, "w": 390, "h": 844, "title": "Devices"},
+    "ScreenJoin.dc.html": {"x": 1880, "y": 3320, "w": 390, "h": 844, "title": "Join · waiting for approval"},
+    "ScreenApproval.dc.html": {"x": 2350, "y": 3320, "w": 390, "h": 844, "title": "Approval sheet"},
+    "ScreenTray.dc.html": {"x": 2820, "y": 3320, "w": 380, "h": 560, "title": "Desktop tray popover"},
+    "ScreenDesktop.dc.html": {"x": 3280, "y": 3320, "w": 1280, "h": 800, "title": "Desktop window · expanded"},
+    "Motion.dc.html": {"x": 0, "y": 4520, "w": 1440, "h": 1100, "title": "06 · Signature motion"}
+  },
+  "order": [
+    "Main.dc.html", "Type.dc.html", "Clips.dc.html", "Rooms.dc.html", "Join.dc.html",
+    "ScreenWelcome.dc.html", "ScreenHome.dc.html", "ScreenHomeDark.dc.html", "ScreenDevices.dc.html",
+    "ScreenJoin.dc.html", "ScreenApproval.dc.html", "ScreenTray.dc.html", "ScreenDesktop.dc.html",
+    "Motion.dc.html"
+  ],
+  "notes": {
+    "rowFoundations": {"x": 0, "y": -300, "text": "Foundations", "kind": "title1", "maxW": 2960},
+    "rowComponents": {"x": 0, "y": 1300, "text": "Components, every state", "kind": "title1", "maxW": 4480},
+    "rowScreens": {"x": 0, "y": 3020, "text": "Screens", "kind": "title1", "maxW": 4560},
+    "rowMotion": {"x": 0, "y": 4220, "text": "Motion", "kind": "title1", "maxW": 1440},
+    "howToReview": {"x": 3040, "y": 0, "w": 420, "maxH": 520, "fill": "orange", "size": "m", "text": "How to review\n\nComment on anything you want changed: select a component and leave a comment, or reply in chat with the board number + component name.\n\nThings worth a decision:\n• Tangerine as the brand seed\n• Roboto Flex (wide headlines) + JetBrains Mono for codes\n• The hero clip's coloured source edge\n• Emoji verification (5 emojis)\n• Bottom nav: Clips · Devices · Settings\n\nColour values are close approximations; Flutter generates the exact M3 roles from the seed."}
+  },
+  "designSystems": []
+}

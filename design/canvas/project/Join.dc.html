@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Join, approval, prompts</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Roboto Flex',system-ui,sans-serif;color:#231A16}
+a{color:#A43D00}a:hover{color:#7A2C00}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1360px; box-sizing: border-box; padding: 64px; background: #FFF8F6; display: flex; flex-direction: column; gap: 36px; font-family: 'Roboto Flex', system-ui, sans-serif; color: #231A16;">
+
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #56423A;">Synclip design system · 05</div>
+    <h1 style="margin: 0; font-size: 56px; line-height: 1.05; font-weight: 750; font-stretch: 120%;">Join, approval, prompts, feedback</h1>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <h2 style="margin: 0; font-size: 22px; font-weight: 650;">CodeInput · 6 cells, Crockford-safe (no 0/O, 1/I/L, U)</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Empty · focused</div>
+        <div style="display: flex; gap: 6px;">
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 2px solid #A43D00; box-sizing: border-box; display: flex; align-items: center; justify-content: center;"><span style="width: 2px; height: 26px; background: #A43D00;"></span></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+        </div>
+        <div style="font-size: 12px; color: #56423A;">Paste fills every cell.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Typing</div>
+        <div style="display: flex; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 600;">
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FCEAE3; display: flex; align-items: center; justify-content: center;">K</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FCEAE3; display: flex; align-items: center; justify-content: center;">7</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FCEAE3; display: flex; align-items: center; justify-content: center;">P</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 2px solid #A43D00; box-sizing: border-box; display: flex; align-items: center; justify-content: center;"><span style="width: 2px; height: 26px; background: #A43D00;"></span></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; border: 1px solid #8A7269; box-sizing: border-box;"></div>
+        </div>
+        <div style="font-size: 12px; color: #56423A;">A gap after the third cell mirrors K7P·Q2X.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #BA1A1A;">No such room</div>
+        <div style="display: flex; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 600; color: #410002;">
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FFDAD6; border: 2px solid #BA1A1A; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">K</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FFDAD6; border: 2px solid #BA1A1A; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">7</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FFDAD6; border: 2px solid #BA1A1A; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">P</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FFDAD6; border: 2px solid #BA1A1A; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">Q</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FFDAD6; border: 2px solid #BA1A1A; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">2</div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #FFDAD6; border: 2px solid #BA1A1A; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">Y</div>
+        </div>
+        <div style="font-size: 12px; color: #BA1A1A;">No room with that code. Check it and try again.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 13px; font-weight: 600; color: #56423A;">Rate-limited</div>
+        <div style="display: flex; gap: 6px;">
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #231A160F;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #231A160F;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #231A160F;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #231A160F;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #231A160F;"></div>
+          <div style="width: 44px; height: 56px; border-radius: 12px; background: #231A160F;"></div>
+        </div>
+        <div style="font-size: 12px; color: #8A5A00;">Too many tries. Try again in 0:42.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">ApprovalSheet · on the existing device</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; padding: 12px 24px 24px; border-radius: 28px; background: #FCEAE3;">
+        <div style="align-self: center; width: 32px; height: 4px; border-radius: 2px; background: #8A7269;"></div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="width: 48px; height: 48px; border-radius: 24px; background: #C23B52; color: #FFFFFF; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 22px; font-weight: 600;">Pixel 7 wants to join</div>
+            <div style="font-size: 14px; color: #56423A;">Android · Quick room K7P·Q2X</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 20px; background: #FFFFFF;">
+          <div style="font-size: 14px; font-weight: 600;">Check these match on Pixel 7</div>
+          <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; text-align: center;">
+            <sc-for list="{{sas}}" as="e" hint-placeholder-count="5">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="font-size: 34px; line-height: 1;">{{e.glyph}}</span><span style="font-size: 11px; font-weight: 600; color: #56423A;">{{e.name}}</span></div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button style="flex: 1; height: 48px; border-radius: 24px; border: 1px solid #8A7269; background: transparent; color: #A43D00; font-size: 15px; font-weight: 600;">Deny</button>
+          <button style="flex: 1; height: 48px; border-radius: 24px; border: none; background: #A43D00; color: #FFFFFF; font-size: 15px; font-weight: 600;">Allow</button>
+        </div>
+        <div style="font-size: 12px; color: #56423A; text-align: center;">Expires in 4:12 · Being approved here</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">WaitingForApproval · on the new device</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border-radius: 28px; background: #FFFFFF; border: 1px solid #DDC1B6;">
+        <div style="font-size: 22px; font-weight: 600;">Approve on MacBook</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #56423A;">MacBook is reviewing your request. Make sure it shows the same five pictures.</div>
+        <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; text-align: center; padding: 16px 8px; border-radius: 20px; background: #FFF1EC;">
+          <sc-for list="{{sas}}" as="e" hint-placeholder-count="5">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;"><span style="font-size: 34px; line-height: 1;">{{e.glyph}}</span><span style="font-size: 11px; font-weight: 600; color: #56423A;">{{e.name}}</span></div>
+          </sc-for>
+        </div>
+        <div style="height: 4px; border-radius: 2px; background: #FFDBCC; overflow: hidden;"><div style="width: 35%; height: 4px; background: #A43D00;"></div></div>
+        <button style="align-self: flex-start; height: 40px; padding: 0 14px; border-radius: 20px; border: none; background: transparent; color: #A43D00; font-size: 14px; font-weight: 550;">Cancel request</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <div style="flex: 1; padding: 12px 14px; border-radius: 14px; background: #FFDAD6; color: #410002; font-size: 13px; line-height: 1.4;"><b>Denied.</b> MacBook declined. Ask the owner, or scan their QR.</div>
+        <div style="flex: 1; padding: 12px 14px; border-radius: 14px; background: #FFDDB0; color: #2B1A00; font-size: 13px; line-height: 1.4;"><b>Expired.</b> No one answered in 5 minutes. Try again.</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 13px; font-weight: 600; color: #56423A;">SensitivePrompt · the one justified dialog</div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 28px; background: #FCEAE3;">
+        <div style="width: 40px; height: 40px; border-radius: 20px; background: #D8E2FF; color: #001A43; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div style="font-size: 22px; font-weight: 600; line-height: 1.25;">This looks like a card number</div>
+        <div style="font-size: 14px; line-height: 1.5; color: #56423A;">Send it anyway? It goes only to devices online right now and is never saved to history.</div>
+        <label style="display: flex; align-items: center; gap: 10px; font-size: 14px;"><input type="checkbox" style="width: 18px; height: 18px; accent-color: #A43D00;">Don't ask for card numbers again</label>
+        <div style="display: flex; justify-content: flex-end; gap: 8px;">
+          <button style="height: 40px; padding: 0 16px; border-radius: 20px; border: none; background: transparent; color: #A43D00; font-size: 14px; font-weight: 550;">Don't send</button>
+          <button style="height: 40px; padding: 0 18px; border-radius: 20px; border: none; background: #A43D00; color: #FFFFFF; font-size: 14px; font-weight: 550;">Send once</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Snackbars</h2>
+      <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 8px 0 16px; border-radius: 8px; background: #392E2A; color: #FFEDE6; font-size: 14px; max-width: 520px;"><span style="flex-grow: 1;">Sent to 2 devices</span></div>
+      <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 8px 0 16px; border-radius: 8px; background: #392E2A; color: #FFEDE6; font-size: 14px; max-width: 520px;"><span style="flex-grow: 1;">Sent what you copied in Chrome</span><button style="height: 40px; padding: 0 12px; border: none; border-radius: 20px; background: transparent; color: #FFB693; font-size: 14px; font-weight: 600;">Undo</button></div>
+      <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 8px 0 16px; border-radius: 8px; background: #392E2A; color: #FFEDE6; font-size: 14px; max-width: 520px;"><span style="flex-grow: 1;">Nothing new on your clipboard</span></div>
+      <div style="display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 8px 0 16px; border-radius: 8px; background: #392E2A; color: #FFEDE6; font-size: 14px; max-width: 520px;"><span style="flex-grow: 1;">Couldn't reach Synclip. Retrying…</span><button style="height: 40px; padding: 0 12px; border: none; border-radius: 20px; background: transparent; color: #FFB693; font-size: 14px; font-weight: 600;">Retry now</button></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 650;">Empty state &amp; web banner</h2>
+      <div style="display: flex; gap: 18px; align-items: center; padding: 24px; border-radius: 28px; border: 1px dashed #DDC1B6;">
+        <div style="width: 88px; height: 88px; border-radius: 44px; background: #FFDBCC; color: #A43D00; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="font-size: 18px; font-weight: 600;">Copy something on another device</div>
+          <div style="font-size: 14px; line-height: 1.5; color: #56423A;">It lands here in about a second. To send from this phone, add the Synclip tile to Quick Settings.</div>
+          <button style="align-self: flex-start; height: 40px; padding: 0 16px; border-radius: 20px; border: none; background: #FFDBCC; color: #2C160C; font-size: 14px; font-weight: 550;">Add Quick Settings tile</button>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 16px; background: #D8E2FF; color: #001A43; font-size: 14px; line-height: 1.45;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px;"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg><span>The web is the least private Synclip client. On devices you own, use the app.</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1360}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      sas: [
+        { glyph: '🦊', name: 'Fox' }, { glyph: '🍋', name: 'Lemon' }, { glyph: '🚀', name: 'Rocket' },
+        { glyph: '🎸', name: 'Guitar' }, { glyph: '🌵', name: 'Cactus' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
